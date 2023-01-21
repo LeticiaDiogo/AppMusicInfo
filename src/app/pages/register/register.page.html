@@ -1,0 +1,86 @@
+<ion-content class="swiper-no-swiping">
+  <div class="container top">
+
+  <ion-slides>
+    <ion-slide>
+      <div class="slide-inner ion-padding">
+        <span>Cadastro</span>
+
+        <form (ngSubmit)="register()"  [formGroup]="credentials">
+          <ion-item fill="solid" class="ion-margin-top" lines="none">
+            <ion-input  type="name" placeholder="Nome" formControlName="nome"></ion-input>
+          </ion-item>
+          <ion-item fill="solid" class="ion-margin-top ion-margin-bottom" lines="none">
+            <ion-input  type="cpf" placeholder="CPF" formControlName="cpf"></ion-input>
+          </ion-item>
+          <ion-item fill="solid" class="ion-margin-top ion-margin-bottom" lines="none">
+            <ion-input  type="email" placeholder="E-mail" formControlName="email"></ion-input>
+          </ion-item>
+          <ion-item fill="solid" class="ion-margin-top ion-margin-bottom" lines="none">
+            <ion-input  type="password" placeholder="Senha" formControlName="password"></ion-input>
+          </ion-item>
+          <ion-item-group formGroupName="endereco">
+            <span>Endereço</span>
+            <ion-item fill="solid" class="ion-margin-top">
+              <ion-input
+                placeholder="CEP"
+                formControlName="cep"
+                type="text"
+                required
+                (keyup)="verifyCEP()"
+
+              ></ion-input>
+            </ion-item >
+            <ion-item fill="solid" class="ion-margin-top">
+              <ion-input
+                placeholder="Logradouro"
+                formControlName="logradouro"
+                type="text"
+                readonly
+                required
+
+              ></ion-input>
+            </ion-item>
+            <ion-item fill="solid" class="ion-margin-top">
+              <ion-input
+                placeholder="Número"
+                formControlName="numero"
+                type="text"
+
+              ></ion-input>
+            </ion-item>
+            <ion-item fill="solid" class="ion-margin-top">
+              <ion-input
+                placeholder="Bairro"
+                formControlName="bairro"
+                type="text"
+                required
+                readonly
+
+              ></ion-input>
+            </ion-item>
+            <ion-item class="ion-margin-top">
+              <ion-input
+              placeholder="Localidade"
+                formControlName="localidade"
+                type="text"
+                required
+                readonly
+
+              ></ion-input>
+            </ion-item>
+            <ion-item fill="solid" class="ion-margin-top">
+              <ion-input  readonly formControlName="uf" placeholder="Estado" type="text" required></ion-input>
+            </ion-item>
+          </ion-item-group>
+
+
+
+          <ion-button type="submit" class="ion-margin-top" expand="block" color="danger" [disabled]="!credentials.valid">Cadastrar</ion-button>
+          <ion-button (click)="addpage()" class="ion-margin-top" expand="block" color="danger" >Voltar</ion-button>
+        </form>
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+

@@ -1,0 +1,52 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-button size="small"(click)="backpage()" color="danger" expand="block">
+      Ir para a página inicial
+    </ion-button>
+    <ion-button size="small"(click)="logout()" color="danger" expand="block">
+      Sair
+    </ion-button>
+
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button color="danger"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Adicionar músicas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+  <form [formGroup]="createSongForm" (submit)="createSong()">
+    <ion-item>
+      <ion-label color="danger" position="floating" stacked>Nome da música</ion-label>
+      <ion-input formControlName="songName" type="text" >
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="danger"  position="floating" stacked>Nome do artista</ion-label>
+      <ion-input formControlName="artistName" type="text" >
+      </ion-input>
+    </ion-item>
+
+
+    <ion-button expand="block" type="submit" color="danger"  [disabled]="!createSongForm.valid">
+      Adicionar música
+    </ion-button>
+
+    <ion-button expand="block" type="submit" color="danger" (click)="backpage()">
+      Voltar
+    </ion-button>
+
+
+  </form>
+</ion-content>

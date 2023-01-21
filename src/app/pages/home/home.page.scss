@@ -1,0 +1,27 @@
+$color_1: #fff;
+$color_2: white;
+$border-color_1: #fff;
+$background: #19422d;
+
+.itens {
+	&::part(native) {
+		color: $color_1;
+		border-color: $border-color_1;
+		border-style: dashed;
+		border-width: 2px;
+		border-radius: 20px;
+	}
+
+}
+
+.menu{
+  height: 95%;
+}
+
+.avatarDiv{
+  height: 8%;
+
+}
+
+
+
